@@ -74,3 +74,41 @@ const word = "";
 const text = "red RED Red!";
 wordCounter(word, text);
 Expected Output: 0
+
+**Describe: boldPassage()**
+
+Test: "It should return a non-matching word in a p tag."
+Code:
+const word = "hello";
+const text = "yo";
+boldPassage(word, text);
+Expected Output: "<p>yo</p>"
+
+Test: "It should return a matching word in a b tag."
+Code:
+const word = "hello";
+const text = "hello";
+boldPassage(word, text);
+Expected Output: "<p><b>hello</b></p>"
+
+Test: "It should wrap words that match in `b` tags but not words that don't."
+Code:
+const word = "hello";
+const text = "hello there";
+boldPassage(word, text);
+Expected Output: "<p><b>hello</b> there</p>"
+
+**Describe mostCommonWords()**
+
+Test: "It should identify multiple instances of a word in the inputted string"
+Code:
+const string = "hey there hey";
+mostCommonWords(text);
+Expected Output: hey 2 there 1
+
+Test: "It should identify the top 3 most used words."
+Code:
+const string = "Hey there how are you? Hey there how?"
+mostCommonWords(text);
+Expected Output: hey2 there 2 how 2
+
